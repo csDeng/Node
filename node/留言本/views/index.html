@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>留言本</title>
+
+    <!--
+        注意，在服务端，文件的路径就不要不能写相对路径
+
+        因为这个时候所有的资源都是通过url标志来获取的
+        服务器开放了/public/目录
+
+
+    -->
+    <!-- <script src='../public/lib/jquery-1.12.4.min.js'></script>
+    <script src='../public/lib/bootstrap.min.js'></script>
+    <link rel='stylesheet' href='../public/lib/bootstrap.min.css'> -->
+
+    <script src="/public/lib/jquery-1.12.4.min.js"></script>
+    <script src="/public/lib/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/lib/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!--
+        当浏览器在解析的过程中，如果遇到
+        link
+        script
+        img
+        video
+        audio
+        等带有src或者href(link)
+        属性标签（具有外链资源）的时候，浏览器会自动对这些资源发起请求
+        
+        前后端都会才能为所欲为
+
+
+    -->
+    <div class="container">
+        <div class="page-header">
+          <h1>留言本 <small>Subtext for header</small></h1>
+        </div>
+        
+      <div class="row">
+        <a class="btn btn-success" href="post.html">发表留言</a>
+      </div>
+      <br />
+      <div class="row">
+        <ul class="list-group">
+            {{each comments}}
+          <li class="list-group-item"><span class='pull-left'>{{$value.name}}说:</span>{{$value.description}}<span class='pull-right'>{{$value.date}}</span></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

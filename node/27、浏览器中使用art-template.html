@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>art-template</title>
+</head>
+<body>
+  <script src="./node_modules/art-template/lib/template-web.js"></script>
+  <script type="text/template" id = 'tpl'>
+    hello {{ name }}
+    我喜欢 {{ each hobbies }} {{ $value }} {{ /each}}
+  </script>
+
+  <script>
+    var ret = template('tpl',{
+      name:'Jack',
+      hobbies: [
+        '唱歌',
+        '跳舞',
+        '写代码'
+      ]
+    })
+    console.log (ret)
+  </script>
+</body>
+</html>

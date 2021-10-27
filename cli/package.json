@@ -1,0 +1,11 @@
+{
+  "name": "mycli",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
